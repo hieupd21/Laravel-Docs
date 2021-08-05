@@ -15,13 +15,13 @@ Yêu cầu gói này trong `composer.json` của dự án Laravel của bạn. T
 composer require maatwebsite/excel
 ```
 
-Thêm *ServiceProvider* trong `config/app.php`
+Thêm **ServiceProvider** trong `config/app.php`
 
 ```
 Maatwebsite\Excel\ExcelServiceProvider::class,
 ```
 
-Thêm *Facade* trong `config/app.php`
+Thêm **Facade** trong `config/app.php`
 
 ```
 'Excel' => Maatwebsite\Excel\Facades\Excel::class,
