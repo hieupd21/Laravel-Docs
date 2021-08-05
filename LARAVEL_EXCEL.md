@@ -53,7 +53,7 @@ public function collection()
 }
 ```
 
-Và để sử dụng được function `collection()` này ta phải implements 1 interface là `**FromCollection**`
+Và để sử dụng được function `collection()` này ta phải implements 1 interface là **FromCollection**
 Khai báo 1 route ở `route.php` để trỏ hướng export
 
 ```php
@@ -84,7 +84,7 @@ public function map($user): array
 }
 ```
 
-Và để sử dụng được function `map()` thì ta phải implement 1 interface là `**WithMapping**`
+Và để sử dụng được function `map()` thì ta phải implement 1 interface là **WithMapping**
 Để hiển thị tên của các cột thì chúng ta sử dụng function `headings()` :
 
 ```php
@@ -98,7 +98,7 @@ public function headings(): array
 }
 ```
 
-Và để sử dụng được function `map()` thì ta phải implement 1 interface là `**WithHeadings**`
+Và để sử dụng được function `map()` thì ta phải implement 1 interface là **WithHeadings**
 
 ### Style
 Bạn có thể tạo style của riêng mình trong excel.
@@ -124,7 +124,7 @@ public function registerEvents(): array
 }
 ```
 
-Và để sử dụng được function `registerEvents()` thì ta phải implement 1 interface là `**WithEvents**`
+Và để sử dụng được function `registerEvents()` thì ta phải implement 1 interface là **WithEvents**
 
 ### Exportables
 Laravel Excel cũng cung cấp `Maatwebsite\Excel\Concerns\Exportable`, và chúng ta thêm vào class như sau:
@@ -147,7 +147,7 @@ public function query()
 }
 ```
 
-Ở `**UserController**` ta gọi function `export` có tham số như ở `__constructor`:
+Ở **UserController** ta gọi function `export` có tham số như ở `__constructor`:
 
 ```php
 public function export($year) 
@@ -162,7 +162,7 @@ public function export($year)
 Route::get('export/{year}', 'UsersController@export');
 ```
 
-Và để sử dụng được function `query()` thì ta phải implement 1 interface là `**FromQuery**`
+Và để sử dụng được function `query()` thì ta phải implement 1 interface là **FromQuery**
 
 ### ShouldAutoSize
-Khi export ra thì kích thước ở các row sẽ không đều và đẹp vì thế hay implement interface `**ShouldAutoSize**` để kích thước tự điều chỉnh và đẹp hơn.
+Khi export ra thì kích thước ở các row sẽ không đều và đẹp vì thế hay implement interface **ShouldAutoSize** để kích thước tự điều chỉnh và đẹp hơn.
