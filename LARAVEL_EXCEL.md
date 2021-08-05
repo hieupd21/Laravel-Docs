@@ -15,15 +15,21 @@ Yêu cầu gói này trong `composer.json` của dự án Laravel của bạn. T
 
 Thêm **ServiceProvider** trong `config/app.php`
 
+```
   Maatwebsite\Excel\ExcelServiceProvider::class,
+```
 
 Thêm **Facade** trong `config/app.php`
 
+```
   'Excel' => Maatwebsite\Excel\Facades\Excel::class,
+```
 
 Để xuất bản cấu hình, hãy chạy lệnh:
 
+```
   php artisan vendor:publish --provider="Maatwebsite\Excel\ExcelServiceProvider" --tag=config
+```
 
 Thao tác này sẽ tạo một tệp cấu hình mới có tên `config/excel.php`
 
