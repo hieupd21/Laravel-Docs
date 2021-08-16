@@ -3,5 +3,5 @@
 </p>
 
 ## 🎓 Mục lục
-[Laravel Docs của tôi](https://laravel.com/)
-[Laravel Excel của tôi](https://github.com/hieupd21/Laravel-Docs/blob/master/LARAVEL_EXCEL.md)
+- [Laravel Docs của tôi](https://laravel.com/)
+- [Laravel Excel của tôi](https://github.com/hieupd21/Laravel-Docs/blob/master/LARAVEL_EXCEL.md)
