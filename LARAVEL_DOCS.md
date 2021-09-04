@@ -2,7 +2,7 @@
 <img src="https://raw.githubusercontent.com/laravel/art/master/logo-lockup/5%20SVG/2%20CMYK/1%20Full%20Color/laravel-logolockup-cmyk-red.svg" width="400" alt="Laravel">
 </p>
 
-## 1. Phân quyền (Policy + Gate)
+## 🔐. Phân quyền (Policy + Gate)
 ### Migration
 Chúng ta sẽ cần các bảng: users, roles, role_user, permissions, permission_role
 
@@ -97,26 +97,29 @@ class User extends Model
 }
 ```
 
-## Lưu trữ hình ảnh (Upload Image Storage)
+## 📤. Tải lên hình ảnh (Upload Image Storage)
 Để upload được ảnh trong Laravel thì ở form mình thêm 1 attribute `enctype="multipart/form-data"`. Ở bên `Controller` ta làm như sau:
 
 ```php
-$pic = $request->picture;
-$picName = 'picture-'.time().'.'.$pic->extension();
-$pic->move(public_path('picture'), $picName);
+public function upload(Request $request)
+{
+  $pic = $request->picture;
+  $picName = 'picture-'.time().'.'.$pic->extension();
+  $pic->move(public_path('picture'), $picName);
 
-User::create([
-  ...,
-  'picture' => $picName;
-  ...,
-]);
+  User::create([
+    ...,
+    'picture' => $picName;
+    ...,
+  ]);
+}
 ```
 
 Giải thích:
   - Tạo biến *picName* để lưu tên theo dạng `[tên]-[thời_gian_tạo].[định_dạng_file_ảnh]`
   - Lưu ảnh vừa tạo vào thư mục `public` với folder *picture* và biến *picName*
 
-## Session
+## 💻. Session
 Là một phiên làm việc, duy trì cho đến khi tắt browser. Tuy nhiên, Laravel định nghĩa cho 1 session tồn tại trong vòng 2 tiếng và vẫn hoạt động cho dù đã tắt browser. Bạn có thể settings theo ý muốn bằng cách truy cập vào `config/session` và settings:
 
 ```php
@@ -174,4 +177,4 @@ public function logout()
 **Lưu ý**: Có 2 loại session là: session và flash session. Sự khác nhau là session tồn tại từ lúc tạo cho đến khi expire còn flash session chỉ tồn tại duy nhất 1 lần cho đến khi trang load lại thì nó sẽ mất đi. 
 
 
-## Eloquent ORM (query trong laravel)
+## 🔮. Eloquent ORM (query trong laravel)
